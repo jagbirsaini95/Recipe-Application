@@ -1,0 +1,19 @@
+img {
+    height: 150px;
+}
+
+.mt-2 {
+    margin-top: 10px;
+}
+
+.pt-5 {
+    padding-top: 25px;
+}
+
+.btn {
+    margin-right: 5px;
+}
+
+.pl-0 {
+    padding-left: 0px;
+}
