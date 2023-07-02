@@ -5,6 +5,8 @@ import { ShoppingListComponent } from './Shopping/shopping-list/shopping-list.co
 import { RecipeStartComponent } from './Recipes/recipe-start/recipe-start.component';
 import { RecipeDetailsComponent } from './Recipes/recipe-details/recipe-details.component';
 import { RecipeEditComponent } from './Recipes/recipe-edit/recipe-edit.component';
+import { RecipeResolverService } from './services/recipe-resolver.service';
+import { AuthComponent } from './auth/auth.component';
 
 const routes: Routes = [
   {
@@ -25,15 +27,22 @@ const routes: Routes = [
       }, {
         path: ':id',
         component: RecipeDetailsComponent,
+        resolve: [RecipeResolverService] //  middleware/resolver runs before route change
       }, {
         path: ':id/edit',
         component: RecipeEditComponent,
+        resolve: [RecipeResolverService] //  middleware/resolver runs before route change
       }
     ]
   },
   {
     path: 'shoppingList',
     component: ShoppingListComponent,
+  }
+  ,
+  {
+    path: 'auth',
+    component: AuthComponent,
   }
 ];
 

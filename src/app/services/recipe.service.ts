@@ -8,24 +8,24 @@ import { Subject } from "rxjs";
 export class RecipeService {
     recipesChanged = new Subject<Recipe[]>();
     private recipes: Recipe[] = [
-        new Recipe(
-            'Dummy pizza',
-            'Dummy pizza description',
-            'https://i.guim.co.uk/img/media/6e57ae5b3bf72076cbd1de6a46932aad5ec942b6/0_982_6721_5626/master/6721.jpg?width=700&quality=85&dpr=1&s=none',
-            [
-                new Ingredient('pizza', 1),
-                new Ingredient('fries', 2),
-            ]),
-        new Recipe(
-            'Dummy Burger',
-            'Dummy Burger description',
-            'https://hips.hearstapps.com/hmg-prod/images/chicken-tikka-masala1-1663341991.jpg',
-            [
-                new Ingredient('burger', 1),
-                new Ingredient('beans', 2),
-                new Ingredient('fries', 5),
-            ]
-        ),
+        // new Recipe(
+        //     'Dummy pizza',
+        //     'Dummy pizza description',
+        //     'https://i.guim.co.uk/img/media/6e57ae5b3bf72076cbd1de6a46932aad5ec942b6/0_982_6721_5626/master/6721.jpg?width=700&quality=85&dpr=1&s=none',
+        //     [
+        //         new Ingredient('pizza', 1),
+        //         new Ingredient('fries', 2),
+        //     ]),
+        // new Recipe(
+        //     'Dummy Burger',
+        //     'Dummy Burger description',
+        //     'https://hips.hearstapps.com/hmg-prod/images/chicken-tikka-masala1-1663341991.jpg',
+        //     [
+        //         new Ingredient('burger', 1),
+        //         new Ingredient('beans', 2),
+        //         new Ingredient('fries', 5),
+        //     ]
+        // ),
 
     ]
 
@@ -57,5 +57,10 @@ export class RecipeService {
         this.recipes.splice(id, 1);
         this.recipesChanged.next(this.recipes.slice());
         ;
+    }
+
+    setRecipes(recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipesChanged.next(this.recipes.slice());
     }
 }

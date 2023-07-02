@@ -7,13 +7,14 @@
             <ul class="nav navbar-nav">
                 <li routerLinkActive="active"><a routerLink="/recipes">Recipe</a></li>
                 <li routerLinkActive="active"><a routerLink="/shoppingList">Shopping lsit</a></li>
+                <li routerLinkActive="active"><a routerLink="/auth">Auth</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown" appDropdown>
                     <a class="pointer dropdown-toggle">Manage <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a class="pointer">Save Data</a></li>
-                        <li><a class="pointer">Fetch Data</a></li>
+                        <li><a class="pointer" (click)="onSaveRecipes()">Save Data</a></li>
+                        <li><a class="pointer" (click)="onFetchRecipes()">Fetch Data</a></li>
                     </ul>
                 </li>
             </ul>
